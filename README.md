@@ -1,9 +1,9 @@
 ¿Cuántas filas devuelve cada consulta y por qué son distintas? Explicá con ejemplos concretos de los datos qué filas se eliminaron con UNION.
 
-UNION Devuelve 10 filas porque elimina duplicados (productos 103, 104 y 106 que aparecen en ambas sucursales).
-Ejemplo: el producto **Monitor 4K (id 103)** aparece en ambas sucursales, pero UNION lo muestra una sola vez.
-UNION ALL Devuelve más filas porque conserva todos los registros, incluyendo los repetidos.  
-Ejemplo: el mismo Monitor 4K aparece dos veces (una por cada sucursal).
+En mi ejecución, UNION y UNION ALL devolvieron 14 filas.
+Esto pasa porque los productos repetidos entre sucursales (ej. Monitor 4K, Teclado Mecánico, SSD Externo) tienen distinto stock.
+UNION elimina duplicados solo si todas las columnas coinciden exactamente; como los valores de stock son diferentes, no se eliminó ninguna fila.
+UNION ALL conserva todos los registros, por eso en este caso devuelve la misma cantidad de filas que UNION.
 
 ¿Por qué UNION ALL es más eficiente que UNION? ¿Qué operación adicional realiza UNION internamente que consume más recursos?
 
